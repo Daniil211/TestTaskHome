@@ -49,7 +49,7 @@ namespace TestTask
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to get weather data: {ex.Message}");
+                MessageBox.Show($"Unable to get weather data for this reason:: {ex.Message}");
             }
         }
 

@@ -1,0 +1,93 @@
+﻿<Window x:Class="TestTask.SelectQueryOutput"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestTask"
+        mc:Ignorable="d"
+        Title="SelectQueryOutput" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Менеджеры с телефоном">
+                <ListView ItemsSource="{Binding Query1}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="FIO" DisplayMemberBinding="{Binding FIO}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Продажи 2021-06-20">
+                <ListView ItemsSource="{Binding Query2}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Count" DisplayMemberBinding="{Binding Count}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Средняя сумма продажи с товаром (Фанера)">
+                <ListView ItemsSource="{Binding Query3}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="AVG(Sum)" DisplayMemberBinding="{Binding AVGSum}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="ФИО и Сумма продаж с товаром (ОСБ)">
+                <ListView ItemsSource="{Binding Query4}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="LastName" DisplayMemberBinding="{Binding LastName}" />
+                            <GridViewColumn Header="Total Sum" DisplayMemberBinding="{Binding TotalSum}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="Менеджер и товар 2021-08-22">
+                <ListView ItemsSource="{Binding Query5}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="FIO" DisplayMemberBinding="{Binding FIO}" />
+                            <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding ProductName}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="'Фанера' и цена не ниже 1750">
+                <ListView ItemsSource="{Binding Query6}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" />
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Price" DisplayMemberBinding="{Binding Price}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="История продаж по месяцам и наименованию">
+                <ListView ItemsSource="{Binding Query7}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Product Name" DisplayMemberBinding="{Binding ProductName}" />
+                            <GridViewColumn Header="Month" DisplayMemberBinding="{Binding Month}" />
+                            <GridViewColumn Header="Total Count" DisplayMemberBinding="{Binding TotalCount}" />
+                            <GridViewColumn Header="Total Sum" DisplayMemberBinding="{Binding TotalSum}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+            <TabItem Header="'Товары', где количество повторений больше 1">
+                <ListView ItemsSource="{Binding Query8}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                            <GridViewColumn Header="Count" DisplayMemberBinding="{Binding Count}" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
