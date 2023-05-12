@@ -31,7 +31,7 @@ public class WeatherService
 public class WeatherData
 {
     [JsonProperty("main")]
-    public TemperatureData Main{ get; set; }
+    public TemperatureData Main { get; set; }
 
     [JsonProperty("weather")]
     public DescriptionData[] Weather { get; set; }

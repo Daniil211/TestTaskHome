@@ -32,7 +32,7 @@
                     </ToolTip>
                 </Button.ToolTip>
             </Button>
-            <Button Grid.Row="1" Grid.Column="1" Content="Get Weather" />
+            <Button Grid.Row="1" Grid.Column="1" Content="Get Weather" Click="OnGetWeatherClick" />
         </Grid>
         <Grid Background="#FFF3AFAF" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Grid.RowDefinitions>
