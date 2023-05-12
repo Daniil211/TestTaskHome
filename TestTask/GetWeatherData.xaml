@@ -6,6 +6,24 @@
         xmlns:local="clr-namespace:TestTask"
         mc:Ignorable="d"
         Title="GetWeatherData" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2196F3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Grid  HorizontalAlignment="Center" Width="400" Margin="0 100 0 0">
             <Grid.RowDefinitions>
@@ -51,5 +69,6 @@
             <Label Grid.Row="2" Grid.Column="0" Content="Wind Speed:"/>
             <Label Grid.Row="2" Grid.Column="1" Content="{Binding WindSpeed}"/>
         </Grid>
+        <Button Content="Навигационное меню" Click="Button1_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>

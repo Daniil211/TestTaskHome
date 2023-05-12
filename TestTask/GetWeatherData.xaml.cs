@@ -59,5 +59,12 @@ namespace TestTask
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private void Button1_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new NavigationMenu();
+            form.Show();
+            this.Close();
+        }
     }
 }

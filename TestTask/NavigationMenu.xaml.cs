@@ -1,9 +1,7 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -14,24 +12,29 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using TestTask.ViewModels;
 
 namespace TestTask
 {
     /// <summary>
-    /// Логика взаимодействия для SelectQueryOutput.xaml
+    /// Логика взаимодействия для NavigationMenu.xaml
     /// </summary>
-    public partial class SelectQueryOutput : Window
+    public partial class NavigationMenu : Window
     {
-        public SelectQueryOutput()
+        public NavigationMenu()
         {
             InitializeComponent();
-            DataContext = new ViewModelSelectQueryOutput();
         }
 
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
-            var form = new NavigationMenu();
+            var form = new GetWeatherData();
+            form.Show();
+            this.Close();
+        }
+
+        private void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            var form = new SelectQueryOutput();
             form.Show();
             this.Close();
         }

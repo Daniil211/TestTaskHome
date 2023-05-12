@@ -6,10 +6,28 @@
         xmlns:local="clr-namespace:TestTask"
         mc:Ignorable="d"
         Title="SelectQueryOutput" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#2196F3"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="5" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
     <Grid>
         <TabControl>
             <TabItem Header="Менеджеры с телефоном">
-                <ListView ItemsSource="{Binding Query1}">
+                <ListView ItemsSource="{Binding Query1}" Margin="0,0,0,30">
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="FIO" DisplayMemberBinding="{Binding FIO}" />
@@ -89,5 +107,6 @@
                 </ListView>
             </TabItem>
         </TabControl>
+        <Button Content="Навигационное меню" Click="Button1_Click" HorizontalAlignment="Left" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
