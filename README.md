@@ -7,3 +7,58 @@
 ![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/afabb6f5-8695-4215-8fc9-66723f64ecc0)
 #
 ![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/3873a5b0-53e6-4351-bc58-f4b9d1d31887)
+
+# SQL Тестовое задание
+Это приложение позволяет просматривать результаты SQL запросов в удобном формате. Всего доступно 8 вкладок, каждая из которых содержит результаты выполнения определенного запроса.
+
+# Использование
+
+Выбрать нужную вкладку для просмотра результатов соответствующего запроса.
+
+# Задание
+1.	Вывести менеджеров у которых имеется номер телефона
+2.	Вывести кол-во продаж за 20 июня 2021
+3.	Вывести среднюю сумму продажи с товаром 'Фанера'
+4.	Вывести фамилии менеджеров и общую сумму продаж для каждого с товаром 'ОСБ'
+5.	Вывести менеджера и товар, который продали 22 августа 2021
+6.	Вывести все товары, у которых в названии имеется 'Фанера' и цена не ниже 1750
+7.	Вывести историю продаж товаров, группируя по месяцу продажи и наименованию товара
+8.	Вывести количество повторяющихся значений и сами значения из таблицы 'Товары', где количество повторений больше 1. 
+
+# Скриншоты
+Ниже приведены скриншоты каждой из вкладок с результатами SQL запросов:
+
+# Вкладка 1
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/a44f3d95-661a-4766-ac22-4eea287aae8c)
+
+# Вкладка 2
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/0fd625cb-6a7a-4b46-bc67-6d452a4a7913)
+
+# Вкладка 3
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/7040771d-5dba-45b8-8853-7873f5edf54e)
+
+# Вкладка 4
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/1eceea57-2d1d-402c-80aa-581d2cc9afca)
+
+# Вкладка 5
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/2ecc6d54-201b-4ec5-9c57-97b38dc4c0c6)
+
+# Вкладка 6
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/e02bc2af-d546-4343-974c-31efc6dc5181)
+
+# Вкладка 7
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/c920c260-88f3-4639-bfc6-f12d3605d567)
+
+# Вкладка 8
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/45e99a45-ad31-433d-942f-65a6367fc93f)
+
+# SQL таблицы по которым были сформированы SELECT запросы:
+
+# Managers
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/8980f4a0-3f62-401f-b96d-3c9a97b17fe1)
+
+# Products
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/0cd65559-6d3a-42f9-ae4a-653f6fc17278)
+
+# Sells
+![image](https://github.com/Daniil211/TestTaskHome/assets/93343255/256278d3-daf5-43ea-bfeb-9f52db458186)
