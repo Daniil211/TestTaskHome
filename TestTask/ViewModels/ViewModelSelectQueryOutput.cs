@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Documents;
 
 namespace TestTask.ViewModels
 {
@@ -65,7 +60,7 @@ namespace TestTask.ViewModels
                 SqlDataReader reader4 = command4.ExecuteReader();
                 while (reader4.Read())
                 {
-                    Query4.Add(new Query4Result { LastName = reader4.GetString(0), TotalSum = reader4.GetDecimal(1) });
+                    Query4.Add(new Query4Result { FIO = reader4.GetString(0), TotalSum = reader4.GetDecimal(1) });
                 }
                 reader4.Close();
                 #endregion
@@ -129,7 +124,7 @@ namespace TestTask.ViewModels
 
     public class Query4Result
     {
-        public string LastName { get; set; }
+        public string FIO { get; set; }
         public decimal TotalSum { get; set; }
     }
 
