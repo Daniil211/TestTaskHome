@@ -28,7 +28,6 @@ namespace TestTask
             InitializeComponent();
             DataContext = new ViewModelSelectQueryOutput();
         }
-
         private void Button1_Click(object sender, RoutedEventArgs e)
         {
             var form = new NavigationMenu();

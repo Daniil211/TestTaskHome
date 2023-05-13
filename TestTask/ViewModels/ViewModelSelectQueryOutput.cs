@@ -1,18 +1,102 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
+using System.Windows.Input;
 
 namespace TestTask.ViewModels
 {
-    public class ViewModelSelectQueryOutput
+    public class ViewModelSelectQueryOutput : INotifyPropertyChanged
     {
-        public List<Query1Result> Query1 { get; set; }
-        public List<Query2Result> Query2 { get; set; }
-        public List<Query3Result> Query3 { get; set; }
-        public List<Query4Result> Query4 { get; set; }
-        public List<Query5Result> Query5 { get; set; }
-        public List<Query6Result> Query6 { get; set; }
-        public List<Query7Result> Query7 { get; set; }
-        public List<Query8Result> Query8 { get; set; }
+        private List<Query1Result> _query1;
+        private List<Query2Result> _query2;
+        private List<Query3Result> _query3;
+        private List<Query4Result> _query4;
+        private List<Query5Result> _query5;
+        private List<Query6Result> _query6;
+        private List<Query7Result> _query7;
+        private List<Query8Result> _query8;
+
+        public List<Query1Result> Query1
+        {
+            get { return _query1; }
+            set
+            {
+                _query1 = value;
+                OnPropertyChanged("Query1");
+            }
+        }
+
+        public List<Query2Result> Query2
+        {
+            get { return _query2; }
+            set
+            {
+                _query2 = value;
+                OnPropertyChanged("Query2");
+            }
+        }
+
+        public List<Query3Result> Query3
+        {
+            get { return _query3; }
+            set
+            {
+                _query3 = value;
+                OnPropertyChanged("Query3");
+            }
+        }
+
+        public List<Query4Result> Query4
+        {
+            get { return _query4; }
+            set
+            {
+                _query4 = value;
+                OnPropertyChanged("Query4");
+            }
+        }
+
+        public List<Query5Result> Query5
+        {
+            get { return _query5; }
+            set
+            {
+                _query5 = value;
+                OnPropertyChanged("Query5");
+            }
+        }
+
+        public List<Query6Result> Query6
+        {
+            get { return _query6; }
+            set
+            {
+                _query6 = value;
+                OnPropertyChanged("Query6");
+            }
+        }
+
+        public List<Query7Result> Query7
+        {
+            get { return _query7; }
+            set
+            {
+                _query7 = value;
+                OnPropertyChanged("Query7");
+            }
+        }
+
+        public List<Query8Result> Query8
+        {
+            get { return _query8; }
+            set
+            {
+                _query8 = value;
+                OnPropertyChanged("Query8");
+            }
+        }
+
+        public ICommand NavigationCommand { get; set; }
 
         public ViewModelSelectQueryOutput()
         {
@@ -106,51 +190,17 @@ namespace TestTask.ViewModels
                 #endregion
             }
         }
-    }
-    public class Query1Result
-    {
-        public string FIO { get; set; }
-    }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-    public class Query2Result
-    {
-        public int Count { get; set; }
-    }
+        protected virtual void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
-    public class Query3Result
-    {
-        public decimal AVGSum { get; set; }
-    }
-
-    public class Query4Result
-    {
-        public string FIO { get; set; }
-        public decimal TotalSum { get; set; }
-    }
-
-    public class Query5Result
-    {
-        public string FIO { get; set; }
-        public string ProductName { get; set; }
-    }
-
-    public class Query6Result
-    {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-    }
-    public class Query7Result
-    {
-        public string ProductName { get; set; }
-        public int Month { get; set; }
-        public int TotalCount { get; set; }
-        public decimal TotalSum { get; set; }
-    }
-    public class Query8Result
-    {
-        public string Name { get; set; }
-        public int Count { get; set; }
+        private void Navigate(object parameter)
+        {
+            // логика навигации
+        }
     }
 }
 

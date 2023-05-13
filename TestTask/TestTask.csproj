@@ -106,6 +106,14 @@
     <Compile Include="DataBase\ModelContainer.cs" />
     <Compile Include="DataBase\Products.cs" />
     <Compile Include="DataBase\Sells.cs" />
+    <Compile Include="Models\Query8Result.cs" />
+    <Compile Include="Models\Query2Result.cs" />
+    <Compile Include="Models\Query7Result.cs" />
+    <Compile Include="Models\Query6Result.cs" />
+    <Compile Include="Models\Query5Result.cs" />
+    <Compile Include="Models\Query4Result.cs" />
+    <Compile Include="Models\Query3Result.cs" />
+    <Compile Include="Models\Query1Result.cs" />
     <Compile Include="NavigationMenu.xaml.cs">
       <DependentUpon>NavigationMenu.xaml</DependentUpon>
     </Compile>
@@ -165,5 +173,6 @@
   <ItemGroup>
     <Resource Include="DataBase\CreationScript.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
