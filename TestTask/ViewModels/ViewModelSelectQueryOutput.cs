@@ -196,11 +196,6 @@ namespace TestTask.ViewModels
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        private void Navigate(object parameter)
-        {
-            // логика навигации
-        }
     }
 }
 

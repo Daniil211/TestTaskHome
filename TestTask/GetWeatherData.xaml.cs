@@ -10,7 +10,9 @@ namespace TestTask
     /// </summary>
     public partial class GetWeatherData : Window, INotifyPropertyChanged
     {
+        // Создаем экземпляр сервиса для получения данных о погоде
         private readonly WeatherService _weatherService = new WeatherService();
+        // Перемееная для данных о погоде
         private WeatherData _weatherData;
 
         public GetWeatherData()
@@ -19,8 +21,10 @@ namespace TestTask
             DataContext = this;
         }
 
+        // Получены данные или нет?
         private bool _isWeatherDataLoaded;
 
+        // Свойства отражения полученнных данных
         public string Temperature => _isWeatherDataLoaded ? _weatherData?.Main?.Temperature.ToString("0.#") + "°C" : string.Empty;
         public string Description => _isWeatherDataLoaded ? _weatherData?.Weather?[0]?.Description : string.Empty;
         public string WindSpeed => _isWeatherDataLoaded ? _weatherData?.Wind?.Speed.ToString("0.#") + " m/s" : string.Empty;
@@ -29,18 +33,22 @@ namespace TestTask
         {
             try
             {
+                // Данные для города
                 _weatherData = await _weatherService.GetWeatherDataAsync(cityTextBox.Text);
+                // Если получены установим tru
                 _isWeatherDataLoaded = true;
+                // Обновление
                 OnPropertyChanged(nameof(Temperature));
                 OnPropertyChanged(nameof(Description));
                 OnPropertyChanged(nameof(WindSpeed));
             }
             catch (Exception ex)
-            {
+            { 
                 MessageBox.Show($"Unable to get weather data for this reason:: {ex.Message}");
             }
         }
 
+        // Реализуем интерфейс для обновления свойств, отображающих данные о погоде
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -56,3 +64,4 @@ namespace TestTask
         }
     }
 }
+
