@@ -35,7 +35,7 @@ namespace TestTask
             {
                 // Данные для города
                 _weatherData = await _weatherService.GetWeatherDataAsync(cityTextBox.Text);
-                // Если получены установим tru
+                // Если получены установим true
                 _isWeatherDataLoaded = true;
                 // Обновление
                 OnPropertyChanged(nameof(Temperature));
@@ -48,11 +48,13 @@ namespace TestTask
             }
         }
 
-        // Реализуем интерфейс для обновления свойств, отображающих данные о погоде
+        //Обьявление события срабатывающего на изменение
         public event PropertyChangedEventHandler PropertyChanged;
 
+        //Метода вызова
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
+            //Уведомление для всех подписанных объектов об изменении свойства
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
