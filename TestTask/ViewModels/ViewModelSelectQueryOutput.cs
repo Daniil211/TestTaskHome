@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data.SqlClient;
-using System.Runtime.CompilerServices;
 using System.Windows.Input;
 
 namespace TestTask.ViewModels
 {
     public class ViewModelSelectQueryOutput : INotifyPropertyChanged
     {
-        //Хранения результатов выполнения запросов
         private List<Query1Result> _query1;
         private List<Query2Result> _query2;
         private List<Query3Result> _query3;
@@ -17,8 +15,6 @@ namespace TestTask.ViewModels
         private List<Query6Result> _query6;
         private List<Query7Result> _query7;
         private List<Query8Result> _query8;
-
-        // Свойства доступа к результатам выполнения запросов
 
         public List<Query1Result> Query1
         {
@@ -100,11 +96,12 @@ namespace TestTask.ViewModels
             }
         }
 
+        public ICommand NavigationCommand { get; set; }
+
         public ViewModelSelectQueryOutput()
         {
-            //Строка подключения
-            string connectionString = "Data Source=DESKTOP-5MDQV6C;Initial Catalog=TestTask;Integrated Security=True"; 
-            //Инициализация списков для результатов запроса
+            string connectionString = "Data Source=DESKTOP-5MDQV6C;Initial Catalog=TestTask;Integrated Security=True";
+
             Query1 = new List<Query1Result>();
             Query2 = new List<Query2Result>();
             Query3 = new List<Query3Result>();
@@ -193,12 +190,10 @@ namespace TestTask.ViewModels
                 #endregion
             }
         }
-        //Обьявление события срабатывающего на изменение
         public event PropertyChangedEventHandler PropertyChanged;
-        //Метода вызова
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
-            //Уведомление для всех подписанных объектов об изменении свойства
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
