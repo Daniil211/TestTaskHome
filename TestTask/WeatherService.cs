@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 public class WeatherService
 {
     //API и URL ключ для получения данных о погоде
-    private const string ApiKey = "957b7a4402647decff3b8162a591a350";
+    private const string ApiKey = "";//api key
     private const string BaseUrl = "https://api.openweathermap.org/data/2.5/weather";
 
     //Метод для получения данных 
